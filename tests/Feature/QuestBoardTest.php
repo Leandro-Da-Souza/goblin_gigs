@@ -16,4 +16,10 @@ describe('QuestBoard', function () {
             ->assertSee($quest->title);
 
     });
+
+    it('Given no quests, visiting /quest display "No quests available"', function () {
+        $response = $this->get('/quests');
+        $response->assertOk()
+            ->assertSee('No quests available');
+    });
 });

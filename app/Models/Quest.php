@@ -2,20 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Enums\QuestStatus;
+use Illuminate\Database\Eloquent\Model;
 
 class Quest extends Model
 {
-    protected function casts(): array {
+    protected function casts(): array
+    {
         return [
-            'status' => QuestStatus::class
+            'status' => QuestStatus::class,
         ];
     }
 
     protected $fillable = [
         'title',
         'description',
-        'status'
+        'status',
     ];
 }

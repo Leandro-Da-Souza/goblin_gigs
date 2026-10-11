@@ -27,12 +27,13 @@ new class extends Component
 <div>
     {{-- Smile, breathe, and go slowly. - Thich Nhat Hanh --}}
     <ul>
-        @foreach ($this->quests as $quest)
+        @forelse ($this->quests as $quest)
             <li>
                 {{ $quest->title }}
             </li>
-            
-        @endforeach
+        @empty
+            <p>No quests available</p>
+        @endforelse
     </ul>
 
 </div>
